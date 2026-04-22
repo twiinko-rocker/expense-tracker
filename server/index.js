@@ -1,3 +1,4 @@
+require('dotenv').config(); // Load environment variables from a .env file
 const express = require('express'); // Import the Express library to create a web server
 const app = express(); // Create an instance of the Express application
 const PORT = process.env.PORT || 3000; // Define the port to listen on, using an environment variable or defaulting to 3000
