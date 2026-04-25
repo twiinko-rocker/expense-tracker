@@ -1,0 +1,144 @@
+Great — solid foundation. You're not starting from zero, which means we can use Sprint 1 efficiently. Let me give you the full project overview and your first sprint.
+
+---
+
+## Project Overview
+
+**Project name:** `expense-tracker`
+**Duration:** 7 weeks
+**Pace:** 20 min/day, 7 days/week
+
+| Phase | Weeks | Focus |
+|---|---|---|
+| Sprint 1 | Week 1–2 | Project setup, repo, folder structure, backend init |
+| Sprint 2 | Week 3–4 | Backend API (expenses CRUD + auth) |
+| Sprint 3 | Week 5 | React frontend + API connection |
+| Sprint 4 | Week 6 | Polish, testing, README |
+| Sprint 5 | Week 7 | Deployment (Render + Vercel) |
+
+---
+
+## Sprint 1 — Project Foundation
+**Duration:** 7 days | **Goal:** Everything set up, first commit pushed, folder structure ready
+
+Given your 20 min/day, each task is scoped to fit. Do not move to the next task until the current one is done and verified.
+
+---
+
+### Task 1 — Monday · 20 min
+**Create your GitHub repo**
+
+- Go to GitHub and create a new **public** repository named `expense-tracker`
+- Add a README and a `.gitignore` (choose Node template)
+- Clone it to your local machine using the terminal:
+```
+git clone https://github.com/YOUR_USERNAME/expense-tracker.git
+```
+- Open the folder in VS Code
+
+✅ **Done when:** The folder exists locally and you can see it in VS Code.
+
+**Deliverable:** Paste your GitHub repo link here before moving on.
+
+---
+
+### Task 2 — Tuesday · 20 min
+**Set up your folder structure**
+
+Inside your cloned repo, create this structure manually:
+
+```
+expense-tracker/
+├── client/        ← React app will live here
+├── server/        ← Node/Express API will live here
+└── README.md
+```
+
+Then inside `server/`, create these empty folders:
+```
+server/
+├── controllers/
+├── models/
+├── routes/
+└── index.js       ← just an empty file for now
+```
+
+✅ **Done when:** Structure exists and you've pushed it with a meaningful commit message like `"chore: initialize project structure"`.
+
+---
+
+### Task 3 — Wednesday · 20 min
+**Initialize the backend (Node + Express)**
+
+In the terminal, navigate to your `server/` folder and run:
+```
+npm init -y
+npm install express dotenv cors
+```
+
+Then in `index.js`, write a basic Express server from memory — don't copy-paste. It should:
+- Import Express
+- Create an app instance
+- Add a single test route `GET /` that returns `"API is running"`
+- Listen on port 5000
+
+✅ **Done when:** You run `node index.js` and visiting `http://localhost:5000` in your browser shows your message.
+
+---
+
+### Task 4 — Thursday · 20 min
+**Environment variables + .gitignore**
+
+- Create a `.env` file inside `server/` with one variable: `PORT=5000`
+- Update `index.js` to read the port from `.env` using `dotenv`
+- Make sure `.env` is listed in your `.gitignore` — this is non-negotiable in real projects
+- Create a `.env.example` file with the same keys but no values (this is what you commit so teammates know what's needed)
+
+✅ **Done when:** Server still runs using the env variable, and `.env` does not appear in your GitHub repo.
+
+---
+
+### Task 5 — Friday · 20 min
+**Initialize the React frontend**
+
+Navigate to the `client/` folder and run:
+```
+npx create-react-app .
+```
+
+This will take a few minutes. While it runs, read what `create-react-app` actually does — you should be able to explain it if asked.
+
+✅ **Done when:** You run `npm start` inside `client/` and the default React page loads in your browser.
+
+---
+
+### Task 6 — Saturday · 20 min
+**Clean up the React boilerplate**
+
+`create-react-app` gives you a lot of files you don't need. Remove the clutter:
+- Delete `App.test.js`, `logo.svg`, `reportWebVitals.js`, `setupTests.js`
+- Clean up `App.js` so it renders just an `<h1>Expense Tracker</h1>`
+- Clean up `index.js` to remove references to deleted files
+
+✅ **Done when:** App still runs with no console errors, and your `App.js` is clean.
+
+---
+
+### Task 7 — Sunday · 20 min
+**Sprint 1 wrap-up commit + self-review**
+
+- Push everything to GitHub with a final commit: `"chore: complete sprint 1 setup"`
+- Open your GitHub repo in the browser and review it like a stranger seeing it for the first time
+- Add at least 3 lines to your `README.md` describing what this project is
+
+✅ **Done when:** Repo is clean, pushed, and README has a basic description.
+
+**Deliverable:** Send me your GitHub link and answer these 2 questions:
+1. What does `dotenv` do and why do we use it?
+2. What is `cors` and why did we install it?
+
+---
+
+**One rule I enforce from Day 1:** every commit message must be meaningful. No `"fix"`, no `"update"`, no `"asdf"`. Use the format `type: short description` — e.g., `feat:`, `chore:`, `fix:`.
+
+Start with Task 1 today. Come back here when it's done and share your repo link. I'll verify before you move forward. 🚀
